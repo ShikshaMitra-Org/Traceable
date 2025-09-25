@@ -1,75 +1,76 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="w-full bg-white border-b border-subtle-border">
-      <div className="max-w-6xl mx-auto px-8 py-4">
+    <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-100 z-50">
+      <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold font-inter tracking-logo text-black">
+            <Link to="/" className="text-xl font-semibold font-inter tracking-wide text-black hover:text-gray-700 transition-colors duration-300">
               TRACEABLE
-            </h1>
+            </Link>
           </div>
 
-          {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a 
-              href="#story" 
-              className="text-text-secondary hover:text-black transition-colors duration-200 font-inter font-medium text-sm"
+          {/* Navigation Links - Apple Style */}
+          <div className="hidden md:flex items-center space-x-12">
+            <Link 
+              to="/our-story" 
+              className="text-gray-600 hover:text-black transition-colors duration-300 font-inter font-normal text-sm tracking-wide"
             >
               Our Story
-            </a>
+            </Link>
             <a 
               href="#products" 
-              className="text-text-secondary hover:text-black transition-colors duration-200 font-inter font-medium text-sm"
+              className="text-gray-600 hover:text-black transition-colors duration-300 font-inter font-normal text-sm tracking-wide"
             >
               Products
             </a>
-            <a 
-              href="#experts" 
-              className="text-text-secondary hover:text-black transition-colors duration-200 font-inter font-medium text-sm"
+            <Link 
+              to="/experts" 
+              className="text-gray-600 hover:text-black transition-colors duration-300 font-inter font-normal text-sm tracking-wide"
             >
               Experts
-            </a>
+            </Link>
             
-            {/* Shop Now Button */}
-            <button className="bg-black text-white px-6 py-2.5 rounded-sm font-inter font-medium text-sm hover:bg-brand-accent transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-minimal-accent focus:ring-offset-2">
+            {/* Shop Now Button - Apple Style */}
+            <button className="bg-black text-white px-5 py-2 rounded-full font-inter font-medium text-sm hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
               Shop Now
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button className="text-black focus:outline-none focus:ring-2 focus:ring-minimal-accent">
+            <button className="text-black focus:outline-none">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation Menu (hidden by default) */}
-        <div className="hidden md:hidden mt-4 space-y-4">
-          <a 
-            href="#story" 
-            className="block text-text-secondary hover:text-black transition-colors duration-200 font-inter font-medium text-sm"
+        <div className="hidden md:hidden mt-6 pb-4 space-y-6">
+          <Link 
+            to="/our-story" 
+            className="block text-gray-600 hover:text-black transition-colors duration-300 font-inter font-normal text-sm tracking-wide"
           >
             Our Story
-          </a>
+          </Link>
           <a 
             href="#products" 
-            className="block text-text-secondary hover:text-black transition-colors duration-200 font-inter font-medium text-sm"
+            className="block text-gray-600 hover:text-black transition-colors duration-300 font-inter font-normal text-sm tracking-wide"
           >
             Products
           </a>
-          <a 
-            href="#experts" 
-            className="block text-text-secondary hover:text-black transition-colors duration-200 font-inter font-medium text-sm"
+          <Link 
+            to="/experts" 
+            className="block text-gray-600 hover:text-black transition-colors duration-300 font-inter font-normal text-sm tracking-wide"
           >
             Experts
-          </a>
-          <button className="w-full text-left bg-black text-white px-6 py-2.5 rounded-sm font-inter font-medium text-sm hover:bg-brand-accent transition-colors duration-200">
+          </Link>
+          <button className="bg-black text-white px-5 py-2 rounded-full font-inter font-medium text-sm hover:bg-gray-800 transition-all duration-300">
             Shop Now
           </button>
         </div>

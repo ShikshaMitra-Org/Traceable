@@ -19,6 +19,9 @@ export default {
       letterSpacing: {
         'logo': '0.2em',
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
     },
   },
   plugins: [],
